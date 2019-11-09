@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Group 4 | IRE Major Project</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="images/4.png" type="image/icon type">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,900" rel="stylesheet">
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+
+    <link rel="stylesheet" href="css/jquery.fancybox.min.css">
+
+    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+
+    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+
+    <link rel="stylesheet" href="css/aos.css">
+
+    <link rel="stylesheet" href="css/style.css">
+    
+  </head>
+  <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+  
+  <div class="site-wrap">
+
+    <header class="site-navbar py-4 bg-white js-sticky-header site-navbar-target">
+
+      <div class="container">
+        <div class="row align-items-center">
+          
+          <div class="col-6 col-xl-2">
+            <h1 class="mb-0 site-logo"><a href="index.html" class="text-black h2 mb-0"><img src="images/ire.png" height="80px" width="80px"><span class="text-primary"></span> </a></h1>
+          </div>
+          <div class="col-12 col-md-10 d-none d-xl-block">
+            <nav class="site-navigation position-relative text-right" role="navigation">
+
+              <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
+                <li><a href="#aim-section" class="nav-link">Aim</a></li>
+                <li><a href="#links-section" class="nav-link">Video and code link</a></li>
+                <li><a href="#related-work-section" class="nav-link">Related Work</a></li>
+                <li><a href="#methodologies-tried-section" class="nav-link">Methodologies tried</a></li>
+                <li><a href="#architecture-section" class="nav-link">Architecture</a></li>
+                <li><a href="#results-section" class="nav-link">Results</a></li>
+                <li><a href="#analysis-section" class="nav-link">Analysis</a></li>
+                <li><a href="#team-section" class="nav-link">Team</a></li>
+              </ul>
+            </nav>
+          </div>
+
+
+          <div class="col-6 d-inline-block d-xl-none ml-md-0 py-3" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle text-black float-right"><span class="icon-menu h3"></span></a></div>
+
+        </div>
+      </div>
+      
+    </header>
+
+  
+     
+    <div class="site-blocks-cover overlay" style="background-image: url(images/back.jpg);" data-aos="fade">
+      <div class="container">
+        <div class="row align-items-center justify-content-center">
+
+          <div class="col-md-12" data-aos="fade-up" data-aos-delay="400">
+                        
+            <div class="row mb-4">
+              <div class="col-md-6">
+                <h1>IRE Major Project</h1>
+                <h2 class="mb-5 text-white">Event Coreference Resolution in Social Media Text</h2>
+                <p class="mb-5">This is webpage for group 4 for IRE Major Project for Monsoon 2019 at IIIT Hyderabad.</p>
+                <div>
+                  <a href="https://github.com/him-mah10/IRE-Major-Project" class="btn btn-primary mr-2 mb-2">Get code here</a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>  
+
+    <div class="site-section" id="aim-section">
+      <div class="container">
+        <div class="row align-items-lg-left">
+          <div class="col-md-12 text-left">
+            <h2 class="section-title mb-3">Aim & Abstract</h2>
+            <h2 class="section-sub-title mb-3">Aim</h2>
+            <p class="mb-4 text-black">Goal of this project is to implement the Event Coreference algorithm proposed by Chao et al. in the paper "Selective Expression for Event Coreference Resolution on Twitter".</p>
+            <h2 class="section-sub-title mb-3">Abstract</h2>
+            <p class="mb-4 text-black">Event coreference is the problem of identifying and connecting mentions of the same events in different contexts. It is a fundamental problem in NLP with wide-spread applications.The given paper is the state-of-the-art for event coreference in Twitter. With the growth in popularity and size of social media, there is an urgent need for systems that can recognize the coreference relation between two event mentions in texts from social media. Approach till now basically depend upon NLP features which restricts domain scalability and leads to propagation error.In this paper a novel selective expression approach based on event trigger to explore the coreferential relationship in high-volume Twitter texts is proposed. Firstly a bidirectional Long Short Term Memory (Bi-LSTM) is exploited to extract the sentence level and mention level features. Then, to selectively express the essential parts of generated features, a selective gate is applied on sentence level features. Next, to integrate the time information of event mention pairs, an auxiliary feature is designed based on triggers and time attributes of the two event mentions. Finally, all these features are concatenated and fed into a classifier to
+predict the binary coreference relationship between the event mention pair. They also released a new dataset called EventCoreOnTweet(ECT) dataset on which they evaluated their methods.It annotates the coreferential relationship between event mentions and event trigger of each event mention. The experimental results demonstrate that the approach achieves significant performance in the ECT dataset.
+</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+      <div class="site-section border-bottom bg-light" id="links-section">
+      <div class="container">
+        <div class="row align-items-lg-left">
+          <div class="col-md-12 text-left">
+            <h2 class="section-title mb-3">Video and code link</h2>
+            <iframe width="1120" height="630" src="https://www.youtube.com/embed/0zJLltYWtNA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <br><br>
+            <a href="https://github.com/him-mah10/IRE-Major-Project" class="btn btn-primary mr-3 mb-3">Get code here</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="site-section" id="related-work-section">
+      <div class="container">
+        <div class="row align-items-lg-left">
+          <div class="col-md-12 text-left">
+            <h2 class="section-title mb-3">Related Work</h2>
+            <h2 class="section-sub-title mb-3">Jointly Multiple Events Extraction via Attention-based Graph
+Information Aggregation</h2>
+            <p class="mb-4 text-black">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+            proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            
+            <h2 class="section-sub-title mb-3">Improving Event Coreference Resolution by Modeling Correlations
+between Event Coreference Chains and Document Topic Structures</h2>
+            <p class="mb-4 text-black">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+            proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="site-section border-bottom bg-light" id="methodologies-tried-section">
+      <div class="container">
+        <div class="row align-items-lg-left">
+          <div class="col-md-12 text-left">
+            <h2 class="section-title mb-3">Methadologies Tired</h2>
+            <p class="mb-4 text-black">
+              Since the aim is to implement a paper most of the methodologies or the way to get the result has already been tried by the author. Our task is to replicate the results of the author. First we had to decide upon the framework to use. We decided to use Tensorflow since the author also used the same(and it was suggested by our mentor also). Next we created dataset using the method described below under the headings Data Collection and Dataset creation. We have discussed the NN implementation details below under the heading Implementation
+            </p>
+            <h2 class="section-sub-title mb-3">Data Collection</h2>
+            <p class="mb-4 text-black">To reproduce the results we need to use the dataset used by the authors. However since they did not have permission to distribute the tweets themselves, they removed the terms, replacing them with “WORD” and left with instructions to create their dataset. Thus to  create their dataset we followed these instructions. First we extracted tweet ids from corpus.txt which they uploaded. Script to do so was created on the fly. Then we downloaded tweets corresponding to these tweet ids using api provided by tweepy. In total we got around 1994 tweets out of total of 2994 tweets that were mentioned. Since the collected data is only 67% of the actual dataset we do not expect results to same as the results of the author. Tweets which were missing were due to one of the following reasons: 
+              <ol class="text-black">
+<li class="text-black">User no longer exists</li>
+<li class="text-black">Tweet no longer exists</li>
+<li class="text-black">We didn’t have the permission to view the tweet.</li>
+</ol> 
+<p class="text-black">
+After getting tweet we tokenized and pre-processed the tweets using the scripts provided by them and then we wrote a script to insert actual tweets using tweet ids in orignal corpus.txt file provided by the author. In case tweet is not available, we left it blank. All the code and dataset created could be found at: 
+<a href="https://github.com/him-mah10/IRE-Major-Project/tree/master/Dataset">Link to dataset</a> 
+</p>
+            <br>
+            <h2 class="section-sub-title mb-3">Dataset creation</h2>
+            <p class="mb-4 text-black">
+              <ol class="text-black">
+              <li>From the data obtained using tweepy, we created the dataset for training(sentence pairs and label) and testing using the algorithm mentioned in the paper.
+              </li>
+              <li>For each event mention e, we paired it with all other event mentions which were tweeted in a time period of less than 7 days after e. 
+              </li>
+              <li>For each pair, we stored the event_mention_id for EM1, tweet_text for EM1, trigger_text for EM1, event_mention_id for EM2, tweet_text for EM2, trigger_text for EM2, label and timestamp difference between the pair.
+              </li>
+              <li>The event-mentions in a pair are considered co-referential(i.e. label=1), iff they have the same event_instance_id.
+              </li>
+            </ol>
+            </p>
+
+            <br>
+            <h2 class="section-sub-title mb-3">Implementation</h2>
+            <p class="mb-4 text-black">
+              <ol class="text-black">
+              <li>We indexed the unique words in the tweet_text and trigger_text for both train and test data.
+              </li>
+              <li>We used Glove twitter 100d embeddings to assign embeddings to words. If any word is not present in Glove, we assigned a [0]*100 embedding value to it. 
+              </li>
+              <li>We also calculated relative distance of each word from event trigger and sent it as input to model. The model initializes random distance embeddings and trains them along with others.
+              </li>
+              <li>We appended the word embedding and distance embedding and created final embedding for each word and passed it as input to BiLSTM.
+              </li>
+              <li>We are in the process of implementing selective gate mechanism.
+              </li>
+            </ol>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+
+    <section class="site-section" id="architecture-section">
+      <div class="container">
+        <div class="row align-items-lg-left">
+          <div class="col-md-12 text-left">
+            <h2 class="section-title mb-3">Architecture</h2>
+            <p class="mb-4 text-black">The pairwise model consists of two parts, one for
+            generating the semantic representation of event mention with
+            recognized event trigger (parts a,b,c below)<a href="#fig1">(Figure 1)</a>, and the other for making
+            the coreferential decision between two event mentions. (parts d below)<a href="#fig2">(Figure 2)</a>.</p>
+            <h2 class="section-sub-title mb-3">a) Sentence and Mention Level Features</h2>
+            <p class="mb-4 text-black">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+            <h2 class="section-sub-title mb-3">b) Selective Expression</h2>
+            <p class="mb-4 text-black">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+            <h2 class="section-sub-title mb-3">c) Attention Mechanism</h2>
+            <p class="mb-4 text-black">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+            <h2 class="section-sub-title mb-3">d) Coreference Decision</h2>
+            <p class="mb-4 text-black">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+            <br>
+            <br>
+            <p class="mb-4"><img src="images/fig1.png" id="fig1" height="700px" alt="figure 1" ></p>
+            <br>
+            <p class="mb-4"><img src="images/fig2.png" id="fig2" height="750px" alt="figure 1" ></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+    <section class="site-section border-bottom bg-light" id="results-section">
+      <div class="container">
+        <div class="row align-items-lg-left">
+          <div class="col-md-12 text-left">
+            <h2 class="section-title mb-3">Results</h2>
+            <p class="mb-4 text-black">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="site-section" id="analysis-section">
+      <div class="container">
+        <div class="row align-items-lg-left">
+          <div class="col-md-12 text-left">
+            <h2 class="section-title mb-3">Analysis</h2>
+            <p class="mb-4 text-black">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+    <section class="site-section border-bottom text-black bg-light" id="team-section">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-12 text-center">
+            <h2 class="section-title mb-3">Team</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 col-lg-3 mb-5 mb-lg-0" data-aos="fade" data-aos-delay="100">
+            <div class="person text-center">
+              <img src="images/himanshu.jpg" alt="Image" class="img-fluid rounded-circle w-50 mb-5">
+              <h3>Himanshu Maheshwari</h3>
+              <p class="position">20171033</p>
+              
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 mb-5 mb-lg-0" data-aos="fade" data-aos-delay="200">
+            <div class="person text-center">
+              <img src="images/sravya.jpg" alt="Image" class="img-fluid rounded-circle w-50 mb-5">
+              <h3>Sri Satya Sravya Pulle</h3>
+              <p class="position">2016XXXX</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 mb-5 mb-lg-0" data-aos="fade" data-aos-delay="300">
+            <div class="person text-center">
+              <img src="images/nitish.jpg" alt="Image" class="img-fluid rounded-circle w-50 mb-5">
+              <h3>Nitish Dwivedi</h3>
+              <p class="position">2018XXXXXX</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 mb-5 mb-lg-0" data-aos="fade" data-aos-delay="300">
+            <div class="person text-center">
+              <img src="images/rushit.jpg" alt="Image" class="img-fluid rounded-circle w-50 mb-5">
+              <h3>Rushit Jasani</h3>
+              <p class="position">2018XXXXXX</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+
+  </div> <!-- .site-wrap -->
+
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="js/jquery-ui.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery.stellar.min.js"></script>
+  <script src="js/jquery.countdown.min.js"></script>
+  <script src="js/bootstrap-datepicker.min.js"></script>
+  <script src="js/jquery.easing.1.3.js"></script>
+  <script src="js/aos.js"></script>
+  <script src="js/jquery.fancybox.min.js"></script>
+  <script src="js/jquery.sticky.js"></script>
+
+  
+  <script src="js/main.js"></script>
+    
+  </body>
+</html>
