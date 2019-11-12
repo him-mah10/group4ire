@@ -63,7 +63,7 @@
 
   
      
-    <div class="site-blocks-cover overlay" style="background-image: url(images/back.jpg);" data-aos="fade">
+    <div class="site-blocks-cover overlay" style="background-image: url(images/alaska.jpg);" data-aos="fade">
       <div class="container">
         <div class="row align-items-center justify-content-center">
 
@@ -75,7 +75,7 @@
                 <h2 class="mb-5 text-white">Event Coreference Resolution in Social Media Text</h2>
                 <p class="mb-5">This is webpage for group 4 for IRE Major Project for Monsoon 2019 at IIIT Hyderabad.</p>
                 <div>
-                  <a href="https://github.com/him-mah10/IRE-Major-Project" class="btn btn-primary mr-2 mb-2">Get code here</a>
+                  <a href="./Group -4 _ Final Report.pdf" class="btn btn-primary mr-2 mb-2"><b>GET REPORT HERE</b></a>
                 </div>
               </div>
             </div>
@@ -122,31 +122,16 @@ predict the binary coreference relationship between the event mention pair. They
             <h2 class="section-title mb-3">Related Work</h2>
             <h2 class="section-sub-title mb-3">Jointly Multiple Events Extraction via Attention-based Graph
 Information Aggregation</h2>
-            <p class="mb-4 text-black">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-            proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p class="mb-4 text-black">The paper talks about multiple events extraction from a sentence. A lot of work used sequential
+modelling methods which suffered because long-range dependencies were not captured. In this
+paper multiple events are extracted by introducing syntactic shortcut arcs to enhance
+information flow and attention-based graph convolutional networks to model graph information.</p>
             
             <h2 class="section-sub-title mb-3">Improving Event Coreference Resolution by Modeling Correlations
 between Event Coreference Chains and Document Topic Structures</h2>
-            <p class="mb-4 text-black">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-            proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p class="mb-4 text-black">This paper proposes a novel approach for event coreference resolution that models correlations
+between event coreference chains and document topical structures
+through an Integer Linear Programming formulation(ILP formulation).</p>
           </div>
         </div>
       </div>
@@ -198,7 +183,13 @@ After getting tweet we tokenized and pre-processed the tweets using the scripts 
               </li>
               <li>We appended the word embedding and distance embedding and created final embedding for each word and passed it as input to BiLSTM.
               </li>
-              <li>We are in the process of implementing selective gate mechanism.
+              <li>We coded the next layers in the network as specified in the paper.
+              </li>
+              <li>We divided the training data into batches of size 128. The number of epochs
+required to train the data is not mentioned in the paper. Hence, for the time
+being, we set the number of epochs to 5. We are trying to plot a graph of
+accuracy (or loss) obtained vs the number of epochs. We are planning to do this
+for number of epochs = 5 to 15 with an interval > 3.
               </li>
             </ol>
             </p>
@@ -218,36 +209,69 @@ After getting tweet we tokenized and pre-processed the tweets using the scripts 
             recognized event trigger (parts a,b,c below)<a href="#fig1">(Figure 1)</a>, and the other for making
             the coreferential decision between two event mentions. (parts d below)<a href="#fig2">(Figure 2)</a>.</p>
             <h2 class="section-sub-title mb-3">a) Sentence and Mention Level Features</h2>
-            <p class="mb-4 text-black">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            <p class="mb-4 text-black">After pre-processing each segmented token in a tweet will be transformed into an
+embedding vector. The embedding vector consists of two parts: word embedding and
+distance embedding. Word2vec was used to pre-train word embedding, and label
+<i>< unknown ></i> ​ to represent the out of vocabulary (OOV) words. Words that are close to
+event trigger have more semantic relevance which is captured by distance embeddings.
+Bi-LSTMs contains two parts LSTM​<sub>f</sub> and
+LSTM​<sub>b​</sub> . LSTM​<sub>f</sub> captures
+left context and LSTM​<sub>b</sub>
+captures right context. Output of both of them are concatenated and fed to selective
+gate. The sentence level feature (dashed rectangle in the left of figure above) is a
+sequence of each word’s context feature in tweet when tweet as input where n is the
+length of tweet.<br><center class="text-black">
+h​<sub>f,i</sub> ​ = LSTM​<sub>f</sub>​[x​<sub>i</sub>​ , h​<sub>f,i-1​</sub> ]<br>
+h​<sub>b,i</sub> ​ = LSTM​<sub>b</sub>​[x​<sub>i</sub>​ , h​<sub>b,i+1​</sub> ]<br>
+h​<sub>i</sub>​ = [h​<sub>f,i​</sub> , h​<sub>b,i​</sub> ]<br>
+Sent<sub>level</sub> ​ = (h<sub>0</sub> ​ ​ , h<sub>1</sub> ​ , h<sub>2</sub> ​ ​ , ..., h<sub>n</sub> )</center><p class="text-black"> ​
+And the mention level feature (dashed rectangle in the right of the figure above) is the
+concatenation of the last output of forward and backward LSTM cell when event trigger
+as input where m is the length of event trigger.<br></p>
+<center class="text-black">Ment<sub>level</sub>​ = [h<sub>f,m</sub>​ , h<sub>b,0</sub>] ​</center>
             </p>
             <h2 class="section-sub-title mb-3">b) Selective Expression</h2>
-            <p class="mb-4 text-black">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            <p class="mb-4 text-black">
+              Each word plays a different role for one specific event trigger in the same sentence.
+Some are core words, while another portion of words is semantically confusing.
+Therefore selective expression mechanisms were employed to achieve more accurate
+latent features of event mentions by limiting the semantic expression of unimportant or
+irrelevant words according to the event trigger. ‘Select’ represents the selective
+representation of event mentions.<br><center class="text-black">
+R​<sub>c​</sub> = h​<sub>i</sub>​ ∗ Ment​<sub>level</sub><br>
+α​<sub>i</sub>​ = tanh(W​<sub>s</sub>​ · R​<sub>c</sub>​ + b​<sub>s</sub>​ )<br>
+Select = α ∗ Sent​<sub>level</sub></center>
             </p>
             <h2 class="section-sub-title mb-3">c) Attention Mechanism</h2>
-            <p class="mb-4 text-black">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            <p class="mb-4 text-black">
+              If there are different event mentions in a tweet, the semantic contribution of each word in
+the tweet to an event mention’s semantic representation is varied. Therefore attention
+mechanisms is used to compute the importance score for each word’s selective
+expression to reflect the different contributions to semantic representation of each event
+mention. Then the importance scores are normalized to obtain the latent feature by the
+weighted sum.<br><center class="text-black">
+u​<sub>i​</sub> = V​<sub>a</sub>​<sup>T</sup>​ tanh(W​<sub>a</sub>​Select​<sub>i</sub>​ + b​<sub>a​</sub> )<br>
+β​<sub>i</sub> =exp(u​<sub>i​</sub>)/ (Σ exp(u​<sub>i​</sub>))<br>
+latent = Σβ​<sub>i</sub> Select<sub>i</sub><br>
+V​<sub>em​</sub> = [latent, Ment​<sub>level​</sub> ]<br></center>
             </p>
             <h2 class="section-sub-title mb-3">d) Coreference Decision</h2>
-            <p class="mb-4 text-black">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            <p class="mb-4 text-black">
+              To determine coreference between two event mentions the second part of the
+architecture receives the semantic representation of two event mentions V​<sub>em​</sub><sup>1</sup> and
+V​<sub>em</sub><sup>2</sup>
+along with V​<sub>local​</sub><sup>1,2</sup> where V​<sub>local​</sub><sup>1,2</sup> captures the number of words in the overlap between
+event triggers and number of days between two event mention.<br><center class="text-black">
+V​<sub>pair​</sub> = (​ V<sub>em</sub><sup>1</sup>​ , V​<sub>em​</sub><sup>2</sup>​ , V​<sub>local​</sub><sup>1,2​</sup> )<br>
+V​<sub>local​</sub> 1,2 ​ = (V​<sub>w​</sub> , V​<sub>d​</sub> )</center><br><p class="mb-4 text-black">
+V​<sub>W​</sub> : The number of words in the overlap between event triggers.<br>
+V​<sub>D​</sub> : The number of days between two event mention.<br>
+The pairwise features are processed by a simple neural network layer to calculate the
+distributed similarity<br><center class="text-black">
+V​<sub>ds​</sub> = relu(W​<sub>ds​</sub> · V​<sub>pair​</sub> + b​<sub>ds​</sub> )</center></p><p class="text-black">
+A softmax layer is applied finally to calculate the probability of two categories
+(coreferential and not coreferential)<br><center class="text-black">
+Score = Softmax(W​<sub>pro​</sub> · V​<sub>ds</sub> + b​<sub>pro</sub> )</center></p>
             </p>
             <br>
             <br>
@@ -265,14 +289,46 @@ After getting tweet we tokenized and pre-processed the tweets using the scripts 
       <div class="container">
         <div class="row align-items-lg-left">
           <div class="col-md-12 text-left">
-            <h2 class="section-title mb-3">Results</h2>
-            <p class="mb-4 text-black">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
+            <h2 class="section-title mb-3">Evaluation Mechanism & Results</h2>
+            <p class="mb-4 text-black">
+              Hyperparameter settings
+              <table border="1" cellpadding="10" class="mb-4 text-black">
+                <tr>
+                  <td>Batch size</td>
+                  <td>128</td>
+                </tr>
+                <tr>
+                  <td>LSTM size</td>
+                  <td>128</td>
+                </tr>
+                <tr>
+                  <td>Attention size</td>
+                  <td>128</td>
+                </tr>
+                <tr>
+                  <td>Co-reference size</td>
+                  <td>128</td>
+                </tr>
+                <tr>
+                  <td>Word embedding size+Distance embedding
+size</td>
+                  <td>100+14</td>
+                </tr>
+                <tr>
+                  <td>Learning rate</td>
+                  <td>0.01</td>
+                </tr>
+                <tr>
+                  <td>Number of epochs</td>
+                  <td>5</td>
+                </tr>
+              </table>
+              <p class="mb-4 text-black">
+              We divided the test dataset into batches of size 128.
+We will report results in terms of Accuracy(A), Precision (P), Recall (R) and F1 -score (F1) using
+commonly-used coreference scoring algorithms given by the CoNLL scorer to evaluate the
+event coreference resolution system.
+<br>Results to be updated.
           </div>
         </div>
       </div>
@@ -284,12 +340,42 @@ After getting tweet we tokenized and pre-processed the tweets using the scripts 
         <div class="row align-items-lg-left">
           <div class="col-md-12 text-left">
             <h2 class="section-title mb-3">Analysis</h2>
-            <p class="mb-4 text-black">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            <p class="mb-4 text-black">
+              <ol>
+                <li>
+                  We see that our system is able to perform the task of coreference resolution but the
+results are not that great. The reason is the dataset size. Since a lot of tweets are
+missing, the performance of the system is adversely affected.
+                </li>
+                <li>
+                  For two tweets which has co-reference, even if one of the tweets goes missing, the other
+is of no use to us and thus training example size is greatly reduced affecting the
+performance of the system.
+                </li>
+                <li>
+                  Also, we observed that in pre-processing stage of raw twitter data that, some event
+triggers are not a part of their corresponding tweets. Example: ‘call’ is event trigger
+whereas ‘calls’ is present in event mention (The code for pre-processing twitter data is
+made available by the authors. We used that as it is)
+                </li>
+                <li>
+                  We would also like to add that using Glove embeddings instead of word2vec
+embeddings trained on the given training data increased the efficiency of model.
+                </li>
+                <li>
+                  Using BiLSTM produced better results than using LSTM even for event triggers(though
+they are small in length and don’t have heavy long-distance interdependencies)
+                </li>
+                <li>
+                  Overall, this paper uses a really efficient network to solve coreference resolution
+problem.
+                </li>
+                <li>
+                  We also looked at the two papers mentioned in ‘Related Work’ section and are thinking
+of ways to combine those ideas with our current approach to produce a more efficient
+model.
+                </li>
+              </ol>
             </p>
           </div>
         </div>
@@ -318,21 +404,21 @@ After getting tweet we tokenized and pre-processed the tweets using the scripts 
             <div class="person text-center">
               <img src="images/sravya.jpg" alt="Image" class="img-fluid rounded-circle w-50 mb-5">
               <h3>Sri Satya Sravya Pulle</h3>
-              <p class="position">2016XXXX</p>
+              <p class="position">20161079</p>
             </div>
           </div>
           <div class="col-md-6 col-lg-3 mb-5 mb-lg-0" data-aos="fade" data-aos-delay="300">
             <div class="person text-center">
               <img src="images/nitish.jpg" alt="Image" class="img-fluid rounded-circle w-50 mb-5">
               <h3>Nitish Dwivedi</h3>
-              <p class="position">2018XXXXXX</p>
+              <p class="position">2018201068</p>
             </div>
           </div>
           <div class="col-md-6 col-lg-3 mb-5 mb-lg-0" data-aos="fade" data-aos-delay="300">
             <div class="person text-center">
               <img src="images/rushit.jpg" alt="Image" class="img-fluid rounded-circle w-50 mb-5">
               <h3>Rushit Jasani</h3>
-              <p class="position">2018XXXXXX</p>
+              <p class="position">2018201034</p>
             </div>
           </div>
         </div>
